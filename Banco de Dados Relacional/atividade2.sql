@@ -6,11 +6,11 @@ CREATE DATABASE db_ecommerce;
 USE db_ecommerce;
 CREATE TABLE tb_produtos(
 	id INT(4) AUTO_INCREMENT,
-    produto VARCHAR(30) NOT NULL,
-    preco DECIMAL (7,2) NOT NULL,
+    	produto VARCHAR(30) NOT NULL,
+    	preco DECIMAL (7,2) NOT NULL,
 	descricao VARCHAR(400),
-    marca VARCHAR(30) NOT NULL,
-    em_estoque BOOLEAN NOT NULL,
+    	marca VARCHAR(30) NOT NULL,
+    	em_estoque BOOLEAN NOT NULL,
     
 	PRIMARY KEY(id));
 

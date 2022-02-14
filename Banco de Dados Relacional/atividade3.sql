@@ -7,20 +7,20 @@ USE db_escola;
 CREATE TABLE tb_estudantes(
 	id_aluno INT(7) NOT NULL AUTO_INCREMENT, 
 	nome VARCHAR(35) NOT NULL,
-    serie VARCHAR(35) NOT NULL,
-    data_nascimento VARCHAR(11) NOT NULL,
-    -- cpf VARCHAR(14), --> EXCLUIDO DA TABELA COM ALTER TABLE
-    -- notas DECIMAL(1,1) --> EXCLUIDO DA TABELA COM ALTER TABLE
+   	serie VARCHAR(35) NOT NULL,
+    	data_nascimento VARCHAR(11) NOT NULL,
+    	-- cpf VARCHAR(14), --> EXCLUIDO DA TABELA COM ALTER TABLE
+    	-- notas DECIMAL(1,1) --> EXCLUIDO DA TABELA COM ALTER TABLE
 
 	PRIMARY KEY(id_aluno));
 
 CREATE TABLE tb_nota_aluno(
 	cod_materia INT(6) NOT NULL AUTO_INCREMENT,
-    fk_aluno INT(7) NOT NULL,
-    nota DECIMAL(3,1) NOT NULL,
+    	fk_aluno INT(7) NOT NULL,
+   	nota DECIMAL(3,1) NOT NULL,
     
-    PRIMARY KEY(cod_materia),
-    FOREIGN KEY(fk_aluno) REFERENCES tb_estudantes (id_aluno));
+    	PRIMARY KEY(cod_materia),
+    	FOREIGN KEY(fk_aluno) REFERENCES tb_estudantes (id_aluno));
 
 
 -- POPULAÇÃO DAS TABELAS
@@ -49,13 +49,13 @@ INSERT INTO tb_nota_aluno(nota, fk_aluno)
 -- SELECT JUNTANDO 2 TABELAS E RETORNANDO ESTUDANTES COM NOTA MAIOR QUE 7
 SELECT id_aluno, nome, serie, data_nascimento, cod_materia, nota FROM tb_estudantes 
 	INNER JOIN tb_nota_aluno ON id_aluno = fk_aluno
-    WHERE nota > 7;
+    	WHERE nota > 7;
     
 
 -- SELECT JUNTANDO 2 TABELAS E RETORNANDO ESTUDANTES COM NOTA MENOR QUE 7    
  SELECT id_aluno, nome, serie, data_nascimento, cod_materia, nota FROM tb_estudantes 
 	INNER JOIN tb_nota_aluno ON id_aluno = fk_aluno
-    WHERE nota < 7;
+    	WHERE nota < 7;
     
 
 -- ATUALIZAÇÃO DE DADOS DAS TABELAS
